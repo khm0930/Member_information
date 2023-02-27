@@ -3,7 +3,7 @@
   <display-name>CRUD test</display-name>
 <servlet>
 	<servlet-name>front</servlet-name>					<!--com.dev.controller.FrontController 서블릿을 front 이름으로 웹서버에 등록  --> 
-	<servlet-class>com.dev.controller.FrontController</servlet-class> 
+	<servlet-class>com.shop.controller.FrontController</servlet-class> 
 	<init-param>										<!--com.dev.controller.FrontController 서블릿에 charset=utf-8 변수를 지정  -->
 		<param-name>charset</param-name>
 		<param-value>UTF-8</param-value>

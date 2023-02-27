@@ -1,4 +1,4 @@
-package com.dev.controller;
+package com.shop.controller;
 //처리결과 페이지로 이동하는 작업 페이지
 import javax.servlet.*;
 import javax.servlet.http.*;

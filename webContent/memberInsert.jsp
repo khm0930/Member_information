@@ -14,7 +14,9 @@ ${error}																 <!--오류가 발생하여 현재 페이지로 다시 �
 	비밀번호 : <input type="password"  name="passwd" ><br>
 	이름 : <input type="text" name="name"> <br>
 	E-Mail : <input type="text" name="mail" > <br>
-
+	주소 : <input type="text" name="address" > <br>
+	전화번호 : <input type="text" name="phone" > <br>
+	성별 : <input type="radio" name="gender" value=female>여성 <input type="radio" name="gender" value=male>남성 <br>
 	<input type="submit"  value="가입" >
 
 </form>

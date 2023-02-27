@@ -1,4 +1,4 @@
-package com.dev.controller;
+package com.shop.controller;
 
 import java.io.*;
 import javax.servlet.*;

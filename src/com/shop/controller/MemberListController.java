@@ -1,4 +1,4 @@
-package com.dev.controller;
+package com.shop.controller;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import com.dev.service.MemberService;
-import com.dev.vo.MemberVO;
+import com.shop.service.MemberService;
+import com.shop.vo.MemberVO;
 
 public class MemberListController implements Controller {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

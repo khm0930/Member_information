@@ -1,9 +1,9 @@
-package com.dev.service;
+package com.shop.service;
 
 import java.util.ArrayList;
 
-import com.dev.dao.MemberDAO;
-import com.dev.vo.MemberVO;
+import com.shop.dao.MemberDAO;
+import com.shop.vo.MemberVO;
 
 public class MemberService {
 

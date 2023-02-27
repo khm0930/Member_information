@@ -1,10 +1,10 @@
-package com.dev.controller;
+package com.shop.controller;
 
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import com.dev.service.MemberService;
+import com.shop.service.MemberService;
 
 public class MemberDeleteController implements Controller {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

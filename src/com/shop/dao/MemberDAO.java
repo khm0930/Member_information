@@ -1,9 +1,9 @@
-package com.dev.dao;
+package com.shop.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-import com.dev.vo.MemberVO;
+import com.shop.vo.MemberVO;
 
 public class MemberDAO {
 
@@ -60,14 +60,17 @@ public class MemberDAO {
 
 		try {
 			conn = connect();
-			pstmt = conn.prepareStatement("insert into member values(?,?,?,?)");
+			pstmt = conn.prepareStatement("insert into member values(auto.nextval,?,?,?,?,?,?,?)");
 			pstmt.setString(1, member.getId());
 			pstmt.setString(2, member.getPasswd());
 			pstmt.setString(3, member.getName());
 			pstmt.setString(4, member.getMail());
+			pstmt.setString(5, member.getaddress());
+			pstmt.setString(6, member.getphone());
+			pstmt.setString(7, member.getgender());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
-			System.out.println("오류발생 : " + ex);
+			System.out.println("insert error : " + ex);
 		} finally {
 			close(conn, pstmt);
 		}
@@ -91,10 +94,13 @@ public class MemberDAO {
 				member.setPasswd(rs.getString(2));
 				member.setName(rs.getString(3));
 				member.setMail(rs.getString(4));
+				member.setaddress(rs.getString(5));
+				member.setphone(rs.getString(6));
+				member.setgender(rs.getString(7));
 			}
 
 		} catch (Exception ex) {
-			System.out.println("오류발생 : " + ex);
+			System.out.println("search error : " + ex);
 		} finally {
 			close(conn, pstmt, rs);
 		}
@@ -108,15 +114,18 @@ public class MemberDAO {
 
 		try {
 			conn = connect();
-			pstmt = conn.prepareStatement("update member set passwd=?,name=?,mail=? where id=?");
+			pstmt = conn.prepareStatement("update member set passwd=?,name=?,mail=?,address=?,phone=?,gender=? where id=?");
 			pstmt.setString(1, member.getPasswd());
 			pstmt.setString(2, member.getName());
 			pstmt.setString(3, member.getMail());
-			pstmt.setString(4, member.getId());
+			pstmt.setString(4, member.getaddress());
+			pstmt.setString(5, member.getphone());
+			pstmt.setString(6, member.getgender());
+			pstmt.setString(7, member.getId());
 			pstmt.executeUpdate();
 
 		} catch (Exception ex) {
-			System.out.println("오류발생 : " + ex);
+			System.out.println("update error : " + ex);
 		} finally {
 			close(conn, pstmt);
 		}
@@ -134,7 +143,7 @@ public class MemberDAO {
 			pstmt.executeUpdate();
 
 		} catch (Exception ex) {
-			System.out.println("오류발생 : " + ex);
+			System.out.println("delete error : " + ex);
 		} finally {
 			close(conn, pstmt);
 		}
@@ -156,15 +165,18 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				member = new MemberVO();
-				member.setId(rs.getString(1));
-				member.setPasswd(rs.getString(2));
-				member.setName(rs.getString(3));
-				member.setMail(rs.getString(4));
+				member.setId(rs.getString(2));
+				member.setPasswd(rs.getString(3));
+				member.setName(rs.getString(4));
+				member.setMail(rs.getString(5));
+				member.setaddress(rs.getString(6));
+				member.setphone(rs.getString(7));
+				member.setgender(rs.getString(8));
 				list.add(member);
 			}
 
 		} catch (Exception ex) {
-			System.out.println("오류발생 : " + ex);
+			System.out.println("list error " + ex);
 		} finally {
 			close(conn, pstmt, rs);
 		}

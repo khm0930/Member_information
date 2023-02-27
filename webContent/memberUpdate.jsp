@@ -1,4 +1,4 @@
-<%@page import="com.dev.vo.MemberVO"%>
+<%@page import="com.shop.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <html>
 <head>
